@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="detallemandamientos" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="0" isSummaryWithPageHeaderAndFooter="true" uuid="96f8eb6d-342f-4716-bd74-43f3fd7405b8">
+	<property name="ireport.zoom" value="1.0000000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["E:\\Desarrollo\\ireports\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="resolucion" class="java.lang.String"/>
+	<parameter name="comparendo" class="java.lang.String"/>
+	<parameter name="fecha_resolucion" class="java.lang.String"/>
+	<parameter name="fecha_comparendo" class="java.lang.String"/>
+	<parameter name="nombre_infractor" class="java.lang.String"/>
+	<parameter name="placa" class="java.lang.String"/>
+	<parameter name="cedula" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<variable name="CONSECUTIVO" class="java.lang.String" resetType="Page"/>
+	<pageHeader>
+		<band height="90">
+			<image>
+				<reportElement x="0" y="1" width="572" height="89" uuid="cfddf1ec-7046-4d71-b26c-43144120c63d"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="682">
+			<staticText>
+				<reportElement x="22" y="12" width="503" height="239" uuid="d43fe22f-2585-40d2-a104-e64de8b9070d"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Calibri" size="14" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[ARTÍCULO SEGUNDO: Sancionar al señor(a) $P{nombre_infractor}, identificado con cédula de ciudadanía No. $P{cedula} con multa de quince (15) Salarios Mínimos Diarios Legales Vigentes, equivalente a $P{valor_infraccion} más intereses.
+
+ARTÍCULO TERCERO: Contra la presente no procede ningún recurso de la vía gubernativa, de conformidad con el artículo 134, 142 de la Ley 769 de Agosto 6 de 2002, quedando la misma debidamente ejecutoriada y notificada en estrados.
+
+ARTÍCULO CUARTO: Remitir el presente expediente a la Oficina de Cobro Coactivo para lo de su competencia.
+
+No siendo otro el motivo de la presente, leída y firmada por quien en ella ha intervenido.]]></text>
+			</staticText>
+			<break>
+				<reportElement x="0" y="0" width="100" height="1" uuid="e2a1d159-ac02-4ed3-8b2d-affa1babf708"/>
+			</break>
+			<image>
+				<reportElement x="0" y="438" width="572" height="180" uuid="a46a3bbc-b518-4626-9ab2-db604440e463"/>
+				<imageExpression><![CDATA[$P{firma_inspector}]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20"/>
+	</pageFooter>
+</jasperReport>

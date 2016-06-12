@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="docroot/WEB-INF/src"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="com.liferay.ide.eclipse.server.plugin.container/portlet">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.apache.ivyde.eclipse.cpcontainer.IVYDE_CONTAINER/?project=iconotech-portlets&amp;ivyXmlPath=ivy.xml&amp;confs=*&amp;ivySettingsPath=%24%7Bliferay_sdk_dir%3Aiconotech-portlets%7D%2Fivy-settings.xml&amp;loadSettingsOnDemand=false&amp;ivyUserDir=%24%7Bliferay_sdk_dir%3Aiconotech-portlets%7D%2F.ivy&amp;propertyFiles=">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/com.liferay.ide.eclipse.server.tomcat.runtimeClasspathProvider/Liferay v6.2 CE (Tomcat 7)">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.web"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_91">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry combineaccessrules="false" kind="src" path="/iconotech-core"/>
+	<classpathentry kind="lib" path="/iconotech-core/bin"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/com.lowagie.text-2.1.7.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/commons-beanutils-1.9.0.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/commons-digester-2.1.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/groovy-all-2.0.1.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/gson-2.5.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/iconotech-core.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/itext-pdfa-5.5.0.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/itextpdf-5.5.0.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/jasperreports-6.2.2.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/jasperreports-fonts-6.2.2.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/jasperreports-javaflow-6.2.2.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/objetos-cobro.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/pdfbox-2.0.1.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/postgresql-9.4.1208.jre6.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/slf4j-api-1.7.21.jar"/>
+	<classpathentry kind="lib" path="docroot/WEB-INF/lib/HikariCP-2.4.6.jar"/>
+	<classpathentry kind="output" path="docroot/WEB-INF/classes"/>
+</classpath>

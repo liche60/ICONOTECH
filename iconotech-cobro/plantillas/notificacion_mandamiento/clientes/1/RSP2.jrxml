@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="detallemandamientos" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="0" isSummaryWithPageHeaderAndFooter="true" uuid="96f8eb6d-342f-4716-bd74-43f3fd7405b8">
+	<property name="ireport.zoom" value="1.0000000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["E:\\Desarrollo\\ireports\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="resolucion" class="java.lang.String"/>
+	<parameter name="comparendo" class="java.lang.String"/>
+	<parameter name="fecha_resolucion" class="java.lang.String"/>
+	<parameter name="fecha_comparendo" class="java.lang.String"/>
+	<parameter name="nombre_infractor" class="java.lang.String"/>
+	<parameter name="placa" class="java.lang.String"/>
+	<parameter name="cedula" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<variable name="CONSECUTIVO" class="java.lang.String" resetType="Page"/>
+	<pageHeader>
+		<band height="90">
+			<image>
+				<reportElement x="0" y="1" width="572" height="89" uuid="cfddf1ec-7046-4d71-b26c-43144120c63d"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="682">
+			<staticText>
+				<reportElement x="22" y="118" width="503" height="564" uuid="d43fe22f-2585-40d2-a104-e64de8b9070d"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Calibri" size="14" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Que en la $P{fecha_comparendo}, el conductor del vehículo mencionado presuntamente incurrió en la violación de la norma de tránsito contemplada en el artículo 131 literal C29 De la ley 769 de 2002, modificado por el artículo 21 de la ley 1383 de 2010, tal como consta en el comparendo No. $P{comparendo}, el cual tiene un anexo consistente en la imagen que muestra la comisión de la infracción en $P{direccion_comparendo}.
+Que la orden de comparendo de la referencia fue debidamente enviada y notificada al Señor (a): $P{nombre_infractor} identificado con cédula de ciudadanía No. $P{cedula} en su calidad de infractor, en el que se informaron los términos que disponía para ejercer su derecho a la defensa.
+
+Que el artículo 22 de la Ley 1383 de 2010, que estipula en su párrafo cuarto: (…) “Las autoridades competentes podrán contratar el servicio de medios técnicos y tecnológicos que permitan evidenciar la comisión de infracciones o contravenciones, el vehículo, la fecha, el lugar y la hora” se enviara por correo la infracción y sus soportes al propietario que estará obligado al pago del multa”.
+
+Que el artículo 136 de la ley 769 de 2002, modificado por el artículo 24 de la ley 1383 de 2010
+establece:
+”si el inculpado rechaza la comisión de la infracción, el inculpado deberá comparecer ante el funcionario en audiencia pública para que este decrete las pruebas conducentes que le sean solicitadas y las de oficio que considere útiles. Si el contraventor no comparece sin justa causa comprobada dentro de los cinco (5) días hábiles siguientes, la autoridad de transito después de treinta (30) días de ocurrida la presunta infracción seguirá el proceso, entendiéndose que queda vinculada al mismo, fallándose en audiencia pública y notificándose en estrados”
+
+Que transcurrido treinta y un (31) días hábiles desde la notificación del aviso de comparendo, el citado propietario del vehículo mencionado, no se presentó en este despacho, ni justifico su inasistencia, ni desvirtúo la comisión de la infracción.]]></text>
+			</staticText>
+			<break>
+				<reportElement x="0" y="0" width="100" height="1" uuid="e2a1d159-ac02-4ed3-8b2d-affa1babf708"/>
+			</break>
+			<textField>
+				<reportElement x="0" y="1" width="572" height="20" uuid="14b71f75-d1dc-4e39-8806-765f28c7932b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[RESOLUCION No $P{resolucion} del $P{fecha_resolucion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="21" width="572" height="20" uuid="15338906-ee61-4093-a9e0-14695e3d41cb"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[COMPARENDO No $P{comparendo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="41" width="572" height="20" uuid="15bf86df-1102-421d-bbee-f8042fe85d6c"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[EL SUSCRITO INSPECTOR ÚNICO DE TRÁNSITO Y TRANSPORTE DE LA]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="61" width="572" height="20" uuid="136aaefd-0406-4ca5-b505-d24c062458da"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[CONSTITUCIONALES, LEGALES, REGLAMENTARIAS Y]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="81" width="572" height="20" uuid="dc902af2-5709-4bff-bc05-80d5feb8b0ab"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[CONSIDERANDO:]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20"/>
+	</pageFooter>
+</jasperReport>

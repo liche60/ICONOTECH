@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/iconotech-core"/>
+	<classpathentry kind="lib" path="libs/com.lowagie.text-2.1.7.jar"/>
+	<classpathentry kind="lib" path="libs/commons-beanutils-1.9.0.jar"/>
+	<classpathentry kind="lib" path="libs/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="libs/commons-digester-2.1.jar"/>
+	<classpathentry kind="lib" path="libs/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="libs/groovy-all-2.0.1.jar"/>
+	<classpathentry kind="lib" path="libs/itext-pdfa-5.5.0.jar"/>
+	<classpathentry kind="lib" path="libs/itextpdf-5.5.0.jar"/>
+	<classpathentry kind="lib" path="libs/jasperreports-6.2.2.jar"/>
+	<classpathentry kind="lib" path="libs/jasperreports-fonts-6.2.2.jar"/>
+	<classpathentry kind="lib" path="libs/jasperreports-javaflow-6.2.2.jar"/>
+	<classpathentry kind="lib" path="libs/objetos-cobro.jar"/>
+	<classpathentry kind="lib" path="libs/pdfbox-2.0.1.jar"/>
+	<classpathentry kind="lib" path="libs/postgresql-9.4-1205.jdbc4.jar"/>
+	<classpathentry kind="lib" path="libs/HikariCP-2.4.6.jar"/>
+	<classpathentry kind="lib" path="libs/slf4j-api-1.7.21.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

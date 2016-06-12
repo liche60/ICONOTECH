@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="comparendosmandamientos" language="groovy" pageWidth="612" pageHeight="792" whenNoDataType="AllSectionsNoDetail" columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="13ac661c-3bb1-485b-bf49-771f7016dfd3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="comparendos" uuid="c765289e-0e04-490d-b136-c138ae806f92">
+		<parameter name="id" class="java.lang.String">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="tipo" class="java.lang.String">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="numero_comparendo" class="java.lang.String"/>
+		<field name="fecha_comparendo" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="identificacion" class="java.lang.String"/>
+	<parameter name="tipo" class="java.lang.String"/>
+	<parameter name="firma" class="java.lang.String"/>
+	<parameter name="DATASET_DS" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="dummy" class="java.lang.String"/>
+	<detail>
+		<band height="18">
+			<componentElement>
+				<reportElement key="table" stretchType="RelativeToTallestObject" mode="Transparent" x="58" y="0" width="471" height="18" uuid="11b2dbbd-32a6-4c0e-9f18-274cea2b24be"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="comparendos" uuid="fcf06559-c80d-4f3a-816d-19b93aca3ac9">
+						<datasetParameter name="id">
+							<datasetParameterExpression><![CDATA[$P{identificacion}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="tipo">
+							<datasetParameterExpression><![CDATA[$P{tipo}]]></datasetParameterExpression>
+						</datasetParameter>
+						<dataSourceExpression><![CDATA[$P{DATASET_DS}]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="180" uuid="be761e83-6c33-447d-9581-6903f0080764">
+						<jr:columnHeader height="28" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="180" height="24" backcolor="#CCCCCC" uuid="73dd110a-035d-4191-aaf9-512f663b4982"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Calibri" size="14" isBold="true"/>
+								</textElement>
+								<text><![CDATA[COMPARENDO]]></text>
+							</staticText>
+							<line>
+								<reportElement x="0" y="24" width="180" height="1" uuid="f03df233-b53b-41c0-888d-46c903376d9d"/>
+								<graphicElement>
+									<pen lineWidth="5.0" lineColor="#666666"/>
+								</graphicElement>
+							</line>
+						</jr:columnHeader>
+						<jr:detailCell height="20" rowSpan="1">
+							<elementGroup>
+								<textField>
+									<reportElement mode="Opaque" x="0" y="0" width="180" height="20" uuid="55f96130-bfcf-4846-8afc-6cf46b957e93"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Calibri" size="14"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{numero_comparendo}]]></textFieldExpression>
+								</textField>
+							</elementGroup>
+							<line>
+								<reportElement x="0" y="19" width="180" height="1" uuid="54caaa3f-eb9c-4bb2-a549-d56bfdde7887"/>
+								<graphicElement>
+									<pen lineStyle="Dotted"/>
+								</graphicElement>
+							</line>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="264" uuid="9449f774-3842-4f6f-affe-dab6a78e5df2">
+						<jr:columnHeader height="28" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="11" y="0" width="253" height="24" backcolor="#CCCCCC" uuid="8ade407d-7e5d-491b-b80b-3b8a69104d61"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Calibri" size="14" isBold="true"/>
+								</textElement>
+								<text><![CDATA[FECHA DEL COMPARENDO]]></text>
+							</staticText>
+							<line>
+								<reportElement x="0" y="24" width="264" height="1" uuid="a77bdcca-ebdc-4eec-8c9b-2ed9585feb72"/>
+								<graphicElement>
+									<pen lineWidth="5.0" lineColor="#666666"/>
+								</graphicElement>
+							</line>
+						</jr:columnHeader>
+						<jr:detailCell height="20" rowSpan="1">
+							<textField>
+								<reportElement x="11" y="0" width="253" height="19" uuid="ccb804e3-d840-4c3e-8a77-cb68349dc47a"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Calibri" size="14"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{fecha_comparendo}]]></textFieldExpression>
+							</textField>
+							<line>
+								<reportElement x="11" y="19" width="253" height="1" uuid="1af652c0-7740-420e-9cc7-0522a0df7ac7"/>
+								<graphicElement>
+									<pen lineStyle="Dotted"/>
+								</graphicElement>
+							</line>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+		<band height="347">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="58" y="19" width="482" height="71" uuid="1845b530-887a-4fd9-ae17-745b59482379"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Calibri" size="14"/>
+				</textElement>
+				<text><![CDATA[Se le advierte que de no comparecer en el término fijado, el mandamiento se le notificara por correo conforme a lo dispuesto a las disposiciones legales contenidas en el artículo 826 del estatuto tributario nacional y concordante con el Art 565 del mismo.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="58" y="90" width="482" height="38" uuid="4c7d08a1-ade3-4a84-8b22-0e015611ae17"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Calibri" size="14"/>
+				</textElement>
+				<text><![CDATA[Si usted al momento de recibir este documento se encuentra a paz y salvo, notifique por escrito a la oficina de Ejecución Fiscal, con copia de los soportes de pago.]]></text>
+			</staticText>
+			<elementGroup>
+				<image>
+					<reportElement x="58" y="203" width="209" height="144" uuid="2cfb8e19-f379-4fc3-b475-af3f02f59881"/>
+					<imageExpression><![CDATA[$P{firma}]]></imageExpression>
+				</image>
+			</elementGroup>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="58" y="128" width="482" height="219" uuid="5e33a8e1-13f7-4da3-a7cc-510e6ec6b976"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Calibri" size="14"/>
+				</textElement>
+				<text><![CDATA[Nota: para efectos de notificación personal deberá acreditar la calidad con que actúa (Representante legal o apoderado).  Nota: para efectos de notificación personal deberá acreditar la calidad con que actúa (Representante legal o apoderado).]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>
