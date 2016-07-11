@@ -55,3 +55,9 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+
+<?php
+if ($vista->jquery_form_required) {
+	echo "<script src=\"http://malsup.github.com/jquery.form.js\"	type=\"text/javascript\"></script>";
+}
+?>

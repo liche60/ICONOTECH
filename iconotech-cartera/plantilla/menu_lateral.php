@@ -6,8 +6,7 @@
 		<!-- Sidebar user panel -->
 		<div class="user-panel">
 			<div class="pull-left image">
-				<img src="dist/img/avatar5.png" class="img-circle"
-					alt="User Image">
+				<img src="dist/img/avatar5.png" class="img-circle" alt="User Image">
 			</div>
 			<div class="pull-left info">
 				<p>Carlos López</p>
@@ -23,9 +22,9 @@
 			</a></li>
 			<li
 				class="treeview <?php if($vista->page == "cc" || $vista->page == "ec" || $vista->page == "ii" || $vista->page == "eca" ){ echo " active "; } ?>"><a
-				href="#"> <i class="fa  fa-money"></i> <span>Administración de
-						Cartera</span> <span class="pull-right-container"> <span
-						class="label label-primary pull-right">4</span>
+				href="#"> <i class="fa  fa-money"></i> <span>Cartera</span> <span
+					class="pull-right-container"> <span
+						class="label label-primary pull-right"> 4</span>
 				</span>
 			</a>
 				<ul class="treeview-menu">

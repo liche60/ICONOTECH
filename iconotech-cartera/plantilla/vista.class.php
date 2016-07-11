@@ -3,6 +3,8 @@ class Vista {
 	
 	var $page;
 	var $breadcrumb;
+	var $jquery_form_required = false;
+	
 	function Vista($page) {
 		$this->page = $page;
 		$this->buildBreadcrumb ();
