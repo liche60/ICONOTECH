@@ -7,7 +7,7 @@ class ProcesosCartera {
 	}
 
 	function printFiles(){
-		if ($handle = opendir('pages/cartera/tmp/archivos_cartera/')) {
+		/*if ($handle = opendir('pages/cartera/tmp/archivos_cartera/')) {
 		
 			while (false !== ($entry = readdir($handle))) {
 		
@@ -26,7 +26,7 @@ class ProcesosCartera {
 			}
 		
 			closedir($handle);
-		}
+		}*/
 	}
 }
 

@@ -1,5 +1,6 @@
 <?php
 include_once 'pages/cartera/carteras.class.php';
+include 'plugins/httpful/httpful.phar';
 
 $vista->jquery_form_required = true;
 $procesosCartera = new ProcesosCartera ();
@@ -7,6 +8,18 @@ $procesosCartera = new ProcesosCartera ();
 ?>
 
 <style>
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	display: none;
+	opacity:0.7;
+	background: url('pages/cartera/LoaderIcon.gif') 50% 50% no-repeat rgb(249,249,249);
+}
+
 #uploadForm {
 	border-top: #F0F0F0 2px solid;
 	background: #FAF8F8;
@@ -64,29 +77,36 @@ $procesosCartera = new ProcesosCartera ();
 
 
 <script type="text/javascript">
-$(document).ready(function() { 
-	 $('#uploadForm').submit(function(e) {	
-		if($('#userImage').val()) {
-			e.preventDefault();
-			$('#loader-icon').show();
-			$(this).ajaxSubmit({ 
-				target:   '#targetLayer', 
-				beforeSubmit: function() {
-				  $("#progress-bar").width('0%');
-				},
-				uploadProgress: function (event, position, total, percentComplete){	
-					$("#progress-bar").width(percentComplete + '%');
-					$("#progress-bar").html('<div id="progress-status">' + percentComplete +' %</div>')
-				},
-				success:function (){
-					$('#loader-icon').hide();
-				},
-				resetForm: true 
-			}); 
-			return false; 
-		}
-	});
-}); 
+
+jQuery(document).ready(function() {
+  jQuery('#uploadForm').submit(function(e) {
+    e.preventDefault();
+    	
+	var fd = new FormData(jQuery(this)[0]);
+	$('#loader-icon').show();
+	$('input[type="submit"]').prop('disabled', true);
+	var xhr = new XMLHttpRequest();
+	
+    xhr.open("POST", 'http://localhost:8080/iconotech-api/rest/file/upload');
+	
+    xhr.onreadystatechange = function () {
+		$('input[type="submit"]').prop('disabled', false); 
+		$(".loader").fadeOut("slow");
+		location.reload();
+    };
+	
+    xhr.send(fd);
+	
+
+		
+  });
+});
+
+
+
+
+
+
 </script>
 
 
@@ -100,8 +120,7 @@ $(document).ready(function() {
 			</div>
 			<!-- /.box-header -->
 			<!-- form start -->
-			<form role="form" id="uploadForm" action="pages/cartera/upload.php"
-				method="post">
+			<form role="form" id="uploadForm" >
 				<div class="box-body">
 					<div class="form-group">
 						<label>Tipo de Cartera</label> <select name="tipo_cartera" class="form-control">
@@ -115,7 +134,7 @@ $(document).ready(function() {
 					</div>
 					<div class="form-group">
 						<label for="exampleInputFile">Subir Archivo</label> <input
-							name="userImage" id="userImage" type="file" class="demoInputBox"
+							name="file" id="file" type="file" class="demoInputBox"
 							required="required" />
 						<p class="help-block">Archivo plano separado por comas con el
 							formato del tipo de cartera seleccionado.</p>
@@ -125,28 +144,17 @@ $(document).ready(function() {
 				<div class="box-footer">
 					<input class="btn btn-primary" type="submit" id="btnSubmit"
 						value="Cargar Cartera" class="btnSubmit" />
-					<div id="progress-div">
-						<div id="progress-bar"></div>
-					</div>
+					
 					<div id="targetLayer"></div>
 				</div>
 			</form>
-			<div id="loader-icon" style="display: none;">
-				<img src="pages/cartera/LoaderIcon.gif" />
-			</div>
+			<div id="loader-icon" class="loader"></div>
 		</div>
 		<!-- /.box -->
 		<!-- /.box-body -->
 	</div>
 	<!-- /.box -->
-	<?php 
-	include('rest/httpful.phar');
-	
-	$response = \Httpful\Request::get('http://google.com')->send();
-	echo $response ;
-	
-	
-	?>
+
 
 
 	<div class="col-md-6">
