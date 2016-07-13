@@ -5,6 +5,10 @@ include 'plugins/httpful/httpful.phar';
 $vista->jquery_form_required = true;
 $procesosCartera = new ProcesosCartera ();
 
+
+$miArray = array(array("id"=>"1", "fecha_carga"=>"13/07/2016", "estado"=>"0","avance"=>'0'),array("id"=>"2", "fecha_carga"=>"13/07/2016", "estado"=>"0","avance"=>'0'),array("id"=>"3", "fecha_carga"=>"12/07/2016", "estado"=>"1","avance"=>'10'),array("id"=>"4", "fecha_carga"=>"10/07/2016", "estado"=>"1","avance"=>'60'));
+$json = json_encode($miArray);
+
 ?>
 
 <style>
@@ -168,12 +172,12 @@ jQuery(document).ready(function() {
 				<table class="table table-striped">
 					<tr>
 						<th style="width: 10px">#</th>
-						<th>Archivo</th>
+						<th>Fecha de Carga</th>
 						<th>Proceso</th>
 						<th style="width: 40px">%</th>
 					</tr>
 					<?php
-					$procesosCartera->printFiles ();
+					$procesosCartera->printFiles ($json);
 					?>
 				</table>
 			</div>
@@ -182,4 +186,5 @@ jQuery(document).ready(function() {
 		<!-- /.box -->
 		<!-- /.box-body -->
 	</div>
+	
 </div>
